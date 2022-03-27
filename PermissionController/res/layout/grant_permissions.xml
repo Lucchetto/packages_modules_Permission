@@ -17,6 +17,7 @@
 <!-- In (hopefully very rare) case dialog is too high: allow scrolling -->
 <ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     style="@style/PermissionGrantScrollView">
@@ -27,11 +28,16 @@
         style="@style/PermissionGrantSingleton">
 
         <!-- The dialog -->
-        <LinearLayout
+        <com.zhenxiang.blur.WindowBlurLinearLayout
             android:id="@+id/grant_dialog"
             android:theme="@style/Theme.PermissionGrantDialog"
+            android:layout_margin="16dp"
             android:importantForAccessibility="no"
-            style="@style/PermissionGrantDialog">
+            style="@style/PermissionGrantDialog"
+            app:backgroundColour="?android:attr/colorBackground"
+            app:cornerRadius="?android:attr/dialogCornerRadius"
+            app:blurRadius="@integer/background_blur_radius"
+            app:blurBackgroundColourOpacity="@dimen/background_blur_colour_opacity">
 
             <LinearLayout
                 android:id="@+id/content_container"
@@ -141,6 +147,6 @@
                     style="@style/PermissionGrantButtonNoUpgrade" />
             </LinearLayout>
 
-        </LinearLayout>
+        </com.zhenxiang.blur.WindowBlurLinearLayout>
     </LinearLayout>
 </ScrollView>
