@@ -80,6 +80,11 @@ android_app {
 
     srcs: [":permissioncontroller-sources"],
 
+    resource_dirs: [
+        "res",
+        "res-blur",
+    ],
+
     libs: ["android.car-stubs"],
 
     static_libs: [
@@ -125,6 +130,7 @@ android_app {
         "libprotobuf-java-lite",
         "SettingsLibUtils",
         "modules-utils-build_system",
+        "AndroidSystemBlur",
     ],
 
     proto: {
